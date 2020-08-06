@@ -13,9 +13,11 @@ class TestApp < Sinatra::Base
     "I am live!"
   end
 
+  # I'm going to sleep for three seconds.
+  # And generate 1000 random strings.
   get '/test' do
     sleep(3)
-    a =  (1..1000).to_a.map{|x| SecureRandom.hex(8)}
+    a = (1..1000).to_a.map{|x| SecureRandom.hex(8)}
     a.sort
   end
 
